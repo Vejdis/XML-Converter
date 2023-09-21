@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-# Initialize an XML tree
+# initiera XML träd
 root = ET.Element("people")
 
 
@@ -10,11 +10,9 @@ current_family = None
 current_address_parent = None  # Håll koll på om adressen till hör Person noden eller Familjemedlem noden
 current_phone_parent = None  # Håll koll på om telefonen till hör Person noden eller Familjemedlem noden
 
-
-
 # Öppna input filen
-with open("input.txt", "r") as file:
-    for line in file:
+with open("input.txt", "r") as input_file:
+    for line in input_file:
         parts = line.strip().split("|")
         category = parts[0] #Tar Kategorin av varje rad och väljer vad som ska göras
 
